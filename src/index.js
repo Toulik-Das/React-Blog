@@ -1,71 +1,39 @@
 //Import Libraries
-import React from 'react';
-import ReactDOM from 'react-dom';
-import faker from 'faker';
+import React from "react";
+import ReactDOM from "react-dom";
+import faker from "faker";
+import CommentDetail from "./CommentDetail";
+
 //Create React Component
- const App = function(){
- 	return (
+const App = function () {
+  return (
+    <div className="ui container comments">
+      <CommentDetail
+        author="Rose"
+        timeAgo="Today at 6:00 PM"
+        comment="It's a fantastic blog"
+        dp={faker.image.avatar()}
+      />
+      <CommentDetail
+        author="Saij"
+        timeAgo="Today at 10:00 PM"
+        comment="Oh! wow"
+        dp={faker.image.avatar()}
+      />
+      <CommentDetail
+        author="Toulik"
+        timeAgo="Today at 7:00 PM"
+        comment="loved it!"
+        dp={faker.image.avatar()}
+      />
+      <CommentDetail
+        author="Tulip"
+        timeAgo="Today at 6:30 PM"
+        comment="Upload some cool stuffs!"
+        dp={faker.image.avatar()}
+      />
+    </div>
+  );
+};
 
- 		<div className = 'ui container comments'>
- 		  <div className = 'comment'>
- 		      <a href='/' className = 'avatar'>
- 		           <img alt='avatar' src = {faker.image.avatar}/>
- 		      </a>
- 		      <div className = 'content'>
- 		           <a href = '/' className = 'author'>
- 		              Toulik
- 		           </a>
- 		          <div className = 'metadata'>
- 		               <span className ='date'> Today at 6:00 PM</span>
- 		          </div>
- 		          <div className = 'text'>Nice Blog post!</div>
- 		      </div>
- 		   </div>
-             <div className = 'comment'>
-  		      <a href='/' className = 'avatar'>
-  		           <img alt='avatar' src = {faker.image.avatar()}/>
-  		      </a>
-  		      <div className = 'content'>
-  		           <a href = '/' className = 'author'>
-  		              John
-  		           </a>
-  		          <div className = 'metadata'>
-  		               <span className ='date'> Today at 6:00 PM</span>
-  		          </div>
-  		          <div className = 'text'>Nice Blog post!</div>
-  		      </div>
-  		   </div>
-         <div className = 'comment'>
-    		      <a href='/' className = 'avatar'>
-    		           <img alt='avatar' src = {faker.image.avatar()}/>
-    		      </a>
-    		      <div className = 'content'>
-    		           <a href = '/' className = 'author'>
-    		              Ron
-    		           </a>
-    		          <div className = 'metadata'>
-    		               <span className ='date'> Today at 6:00 PM</span>
-    		          </div>
-    		          <div className = 'text'>Nice Blog post!</div>
-    		      </div>
-    		   </div>
-           <div className = 'comment'>
-      		      <a href='/' className = 'avatar'>
-      		           <img alt='avatar' src = {faker.image.avatar()}/>
-      		      </a>
-      		      <div className = 'content'>
-      		           <a href = '/' className = 'author'>
-      		              Harry
-      		           </a>
-      		          <div className = 'metadata'>
-      		               <span className ='date'> Today at 6:00 PM</span>
-      		          </div>
-      		          <div className = 'text'>Nice Blog post!</div>
-      		      </div>
-      		   </div>
- 		</div>
-
- 	 );
- };
-
- ReactDOM.render(<App/>, document.querySelector('#root'));
+ReactDOM.render(<App />, document.querySelector("#root"));
